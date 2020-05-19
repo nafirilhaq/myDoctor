@@ -1,5 +1,7 @@
-import Splash from './Splash.svg';
+import ILSplash from './Splash.svg';
+import ILBgLanding from './bgLanding.png';
 
 export {
-  Splash
+  ILSplash,
+  ILBgLanding
 };
