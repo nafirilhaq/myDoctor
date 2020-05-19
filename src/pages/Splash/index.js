@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { ILSplash } from '../../assets';
+import { ILLogo } from '../../assets';
+import { colors } from '../../utils/colors';
+import { fonts } from '../../utils/fonts';
 
-const Splash = () => {
+const Splash = ({ navigation }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('Landing');
+    }, 2000);
+  }, [])
   return (
     <View style={styles.page}>
-      <ILSplash />
+      <ILLogo />
       <Text style={styles.title}>My Doctor</Text>
     </View>
   )
@@ -18,12 +25,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: colors.white
   },
   title: {
     marginTop: 20,
     fontSize: 20,
-    fontFamily: 'Nunito-SemiBold',
-    color: '#112340'
+    fontFamily: fonts.semiBold,
+    color: colors.text.first
   }
 })

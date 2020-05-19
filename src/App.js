@@ -1,11 +1,13 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import { Splash, Landing } from './pages'
+import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
+import Router from './router';
 
 
 const App = () => {
   return (
-    <Landing />
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
   )
 }
 

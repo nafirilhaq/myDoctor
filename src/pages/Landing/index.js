@@ -1,20 +1,26 @@
 import React from 'react'
-import { StyleSheet, Text, View, ImageBackground } from 'react-native'
-import { ILSplash, ILBgLanding } from '../../assets'
+import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { ILBgLanding, ILLogo } from '../../assets'
 import Button from '../../components/atoms/Button'
 import Gap from '../../components/atoms/Gap'
+import { colors } from '../../utils/colors'
+import { fonts } from '../../utils/fonts'
 
-const Landing = () => {
+const Landing = ({ navigation }) => {
+  const handleGoto = (screen) => {
+    navigation.navigate(screen);
+  }
+
   return (
     <ImageBackground source={ILBgLanding} style={styles.page}>
       <View>
-        <ILSplash />
+        <ILLogo />
         <Text style={styles.title}>Konsultasi dengan dokter jadi lebih mudah & fleksibel</Text>
       </View>
       <View>
-        <Button title="Get Started" />
+        <Button title="Get Started" onPress={() => handleGoto('Landing')} />
         <Gap height={16} />
-        <Button type="secondary" title="Sign In" />
+        <Button type="secondary" title="Sign In" onPress={() => handleGoto('SignIn')} />
       </View>
     </ImageBackground>
   )
@@ -32,7 +38,7 @@ const styles = StyleSheet.create({
     maxWidth: 240,
     marginTop: 91,
     fontSize: 28,
-    color: 'white',
-    fontFamily: 'Nunito-SemiBold'
+    color: colors.white,
+    fontFamily: fonts.semiBold
   },
 })
