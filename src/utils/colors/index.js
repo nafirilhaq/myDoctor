@@ -1,25 +1,26 @@
 const mainColor = {
-  dark: '#112340',
-  grey: '#7D8797',
-  green: '#0BCAD4'
-}
+  dark1: '#112340',
+  grey1: '#7D8797',
+  grey2: '#E9E9E9',
+  green1: '#0BCAD4',
+};
 
 export const colors = {
   white: 'white',
   black: 'black',
   button: {
-    background: {
-      first: mainColor.green,
-      second: 'white'
+    primary: {
+      background: mainColor.green1,
+      text: 'white',
     },
-    text: {
-      first: 'white',
-      second: mainColor.dark
-    }
+    secondary: {
+      background: 'white',
+      text: mainColor.dark1,
+    },
   },
   text: {
-    first: mainColor.dark,
-    second: mainColor.grey
+    first: mainColor.dark1,
+    second: mainColor.grey1,
   },
-  border: '#E9E9E9'
-}
+  border: mainColor.grey2,
+};
