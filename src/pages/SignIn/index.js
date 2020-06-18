@@ -1,8 +1,9 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { ILLogo } from '../../assets'
-import { Input, Gap, Link, Button } from '../../components'
-import { fonts } from '../../utils/fonts'
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import {ILLogo} from '../../assets';
+import {Input, Gap, Link, Button} from '../../components';
+import {fonts} from '../../utils/fonts';
+import {colors} from '../../utils/colors';
 
 const SignIn = () => {
   return (
@@ -19,22 +20,22 @@ const SignIn = () => {
       <Gap height={30} />
       <Link title="Create New Account" fontSize={16} align="center" />
     </View>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;
 
 const styles = StyleSheet.create({
   page: {
     flex: 1,
     padding: 40,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   title: {
     fontSize: 20,
-    color: '#112340',
+    color: colors.text.first,
     maxWidth: 155,
     marginVertical: 40,
-    fontFamily: fonts.semiBold
-  }
-})
+    fontFamily: fonts[600],
+  },
+});

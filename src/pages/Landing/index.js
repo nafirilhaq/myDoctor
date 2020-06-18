@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
     marginTop: 91,
     fontSize: 28,
     color: colors.white,
-    fontFamily: fonts.semiBold,
+    fontFamily: fonts[600],
   },
 });

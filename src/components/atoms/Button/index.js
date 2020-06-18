@@ -1,9 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {colors} from '../../../utils/colors';
 import {fonts} from '../../../utils/fonts';
+import IconOnly from './IconOnly';
 
-const Button = ({title, type, onPress}) => {
+const Button = ({title, type, icon, onPress}) => {
+  if (type === 'icon-only') {
+    return <IconOnly icon={icon} onPress={onPress} />;
+  }
   return (
     <TouchableOpacity style={styles.container(type)} onPress={onPress}>
       <Text style={styles.text(type)}>{title}</Text>
@@ -23,7 +27,7 @@ const styles = StyleSheet.create({
   }),
   text: type => ({
     fontSize: 18,
-    fontFamily: fonts.semiBold,
+    fontFamily: fonts[600],
     textAlign: 'center',
     marginVertical: 10,
     color:
