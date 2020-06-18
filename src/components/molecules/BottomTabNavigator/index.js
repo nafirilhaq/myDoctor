@@ -41,6 +41,7 @@ const BottomTabNavigator = ({state, descriptors, navigation}) => {
             key={index}
             title={label}
             onPress={onPress}
+            onLongPress={onLongPress}
             isActive={isFocused}
           />
         );

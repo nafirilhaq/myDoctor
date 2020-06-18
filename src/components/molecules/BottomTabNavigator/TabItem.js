@@ -11,7 +11,7 @@ import {
 import {colors} from '../../../utils/colors';
 import {fonts} from '../../../utils/fonts';
 
-const TabItem = ({title, onPress, isActive}) => {
+const TabItem = ({title, onPress, onLongPress, isActive}) => {
   const Icon = () => {
     if (title === 'Doctor') {
       return isActive ? <IconDoctorActive /> : <IconDoctor />;
@@ -25,7 +25,10 @@ const TabItem = ({title, onPress, isActive}) => {
     return <IconDoctor />;
   };
   return (
-    <TouchableOpacity onPress={onPress} style={styles.component}>
+    <TouchableOpacity
+      onPress={onPress}
+      onLongPress={onLongPress}
+      style={styles.component}>
       <Icon />
       <Text style={styles.text(isActive)}>{title}</Text>
     </TouchableOpacity>

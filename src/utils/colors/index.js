@@ -4,11 +4,13 @@ const mainColor = {
   grey1: '#7D8797',
   grey2: '#E9E9E9',
   green1: '#0BCAD4',
+  green2: '#EDFCFD',
 };
 
 export const colors = {
   white: 'white',
   black: 'black',
+  background: mainColor.dark1,
   tabNav: mainColor.dark1,
   button: {
     primary: {
@@ -27,4 +29,5 @@ export const colors = {
     menuInactive: mainColor.dark2,
   },
   border: mainColor.grey2,
+  doctorCard: mainColor.green2,
 };

@@ -7,6 +7,11 @@ import IconMessages from './ic-messages.svg';
 import IconMessagesActive from './ic-messages-active.svg';
 import IconHospitals from './ic-hospitals.svg';
 import IconHospitalsActive from './ic-hospitals-active.svg';
+import IconDokterUmum from './icon_dokter_umum.svg';
+import IconDokterAnak from './icon_dokter_anak.svg';
+import IconDokterPsikiater from './icon_dokter_psikiater.svg';
+import IconDokterObat from './icon_dokter_obat.svg';
+import IconStar from './ic-star.svg';
 
 export {
   IconBackDark,
@@ -18,4 +23,9 @@ export {
   IconMessagesActive,
   IconHospitals,
   IconHospitalsActive,
+  IconDokterAnak,
+  IconDokterObat,
+  IconDokterUmum,
+  IconDokterPsikiater,
+  IconStar,
 };
