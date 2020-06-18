@@ -5,10 +5,13 @@ import {IconAddPhoto, ILPhotoNull} from '../../assets';
 import {colors} from '../../utils/colors';
 import {fonts} from '../../utils/fonts';
 
-const UploadPhoto = () => {
+const UploadPhoto = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header title="Upload Photo" />
+      <Header
+        title="Upload Photo"
+        onPress={() => navigation.navigate('Landing')}
+      />
       <View style={styles.content}>
         <View style={styles.profile}>
           <View style={styles.avatarWrapper}>
