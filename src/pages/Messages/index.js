@@ -7,15 +7,17 @@ import {fonts} from '../../utils/fonts';
 const Messages = () => {
   return (
     <View style={styles.page}>
-      <Text style={styles.header}>Messages</Text>
-      <TouchableOpacity style={styles.item}>
-        <UserProfile />
-      </TouchableOpacity>
-      <View style={styles.item}>
-        <UserProfile />
-      </View>
-      <View style={styles.item}>
-        <UserProfile />
+      <View style={styles.content}>
+        <Text style={styles.header}>Messages</Text>
+        <TouchableOpacity style={styles.item}>
+          <UserProfile />
+        </TouchableOpacity>
+        <View style={styles.item}>
+          <UserProfile />
+        </View>
+        <View style={styles.item}>
+          <UserProfile />
+        </View>
       </View>
     </View>
   );
@@ -25,8 +27,16 @@ export default Messages;
 
 const styles = StyleSheet.create({
   page: {
+    backgroundColor: colors.background,
+    flex: 1,
+  },
+  content: {
     paddingHorizontal: 16,
     paddingVertical: 30,
+    backgroundColor: colors.white,
+    flex: 1,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
   },
   header: {
     fontSize: 20,
