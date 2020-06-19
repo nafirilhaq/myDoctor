@@ -11,6 +11,7 @@ const SignUp = ({navigation}) => {
     <View style={styles.page}>
       <Header onPress={() => navigation.goBack()} title="Daftar Akun" />
       <View style={styles.container}>
+        <Gap height={10} />
         <Input label="Full Name" />
         <Gap height={24} />
         <Input label="Pekerjaan" />

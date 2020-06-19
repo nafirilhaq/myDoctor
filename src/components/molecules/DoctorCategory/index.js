@@ -1,16 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {IconHospitalsActive, IconDokterUmum} from '../../../assets';
 import {colors} from '../../../utils/colors';
 import {fonts} from '../../../utils/fonts';
 
-const DoctorCategory = () => {
+const DoctorCategory = ({onPress}) => {
   return (
-    <View style={styles.component}>
+    <TouchableOpacity style={styles.component} onPress={onPress}>
       <IconDokterUmum />
       <Text style={styles.text}>Saya butuh</Text>
       <Text style={styles.category}>dokter umum</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

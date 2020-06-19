@@ -10,7 +10,7 @@ import {
 import {fonts} from '../../utils/fonts';
 import {colors} from '../../utils/colors';
 
-const Doctor = () => {
+const Doctor = ({navigation}) => {
   return (
     <View style={styles.page}>
       <View style={styles.content}>
@@ -26,10 +26,18 @@ const Doctor = () => {
               showsHorizontalScrollIndicator={false}
               style={styles.doctorCategory}>
               <Gap width={16} />
-              <DoctorCategory />
-              <DoctorCategory />
-              <DoctorCategory />
-              <DoctorCategory />
+              <DoctorCategory
+                onPress={() => navigation.navigate('ChooseDoctor')}
+              />
+              <DoctorCategory
+                onPress={() => navigation.navigate('ChooseDoctor')}
+              />
+              <DoctorCategory
+                onPress={() => navigation.navigate('ChooseDoctor')}
+              />
+              <DoctorCategory
+                onPress={() => navigation.navigate('ChooseDoctor')}
+              />
               <Gap width={6} />
             </ScrollView>
           </View>
