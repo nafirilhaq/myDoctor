@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import {UserProfile} from '../../components';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {DummyDoctor} from '../../assets';
+import {List} from '../../components';
 import {colors} from '../../utils/colors';
 import {fonts} from '../../utils/fonts';
 
@@ -10,13 +11,13 @@ const Messages = () => {
       <View style={styles.content}>
         <Text style={styles.header}>Messages</Text>
         <TouchableOpacity style={styles.item}>
-          <UserProfile />
+          <List title="Jenit Lutfianis" desc="Dentist" image={DummyDoctor} />
         </TouchableOpacity>
         <View style={styles.item}>
-          <UserProfile />
+          <List title="Jenit Lutfianis" desc="Dentist" image={DummyDoctor} />
         </View>
         <View style={styles.item}>
-          <UserProfile />
+          <List title="Jenit Lutfianis" desc="Dentist" image={DummyDoctor} />
         </View>
       </View>
     </View>

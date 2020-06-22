@@ -1,14 +1,21 @@
 import React from 'react';
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import {
-  UserProfile,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+import {
   DoctorCategory,
   DoctorRate,
-  NewsSection,
   Gap,
+  List,
+  NewsSection,
 } from '../../components';
-import {fonts} from '../../utils/fonts';
 import {colors} from '../../utils/colors';
+import {fonts} from '../../utils/fonts';
+import {DummyUser} from '../../assets';
 
 const Doctor = ({navigation}) => {
   return (
@@ -16,7 +23,13 @@ const Doctor = ({navigation}) => {
       <View style={styles.content}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Gap height={32} />
-          <UserProfile />
+          <TouchableOpacity onPress={() => navigation.navigate('UserProfile')}>
+            <List
+              title="Jenit Anggiani"
+              desc="Product Designer"
+              image={DummyUser}
+            />
+          </TouchableOpacity>
           <Text style={styles.title}>
             Mau konsultasi dengan siapa hari ini?
           </Text>
@@ -42,11 +55,11 @@ const Doctor = ({navigation}) => {
             </ScrollView>
           </View>
           <Text style={styles.sectionLabel}>Top Rated Doctors</Text>
-          <DoctorRate />
+          <DoctorRate onPress={() => navigation.navigate('DoctorProfile')} />
           <Gap height={16} />
-          <DoctorRate />
+          <DoctorRate onPress={() => navigation.navigate('DoctorProfile')} />
           <Gap height={16} />
-          <DoctorRate />
+          <DoctorRate onPress={() => navigation.navigate('DoctorProfile')} />
           <Text style={styles.sectionLabel}>Good News</Text>
           <View style={styles.newsWrapper}>
             <NewsSection />

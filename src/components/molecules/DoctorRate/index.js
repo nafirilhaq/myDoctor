@@ -1,21 +1,20 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import UserProfile from '../UserProfile';
-import {IconStar} from '../../../assets';
-import {Gap} from '../../atoms';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
+import {IconStar, DummyDoctor} from '../../../assets';
+import List from '../List';
 
-const DoctorRate = () => {
+const DoctorRate = ({onPress}) => {
   return (
-    <View style={styles.component}>
+    <TouchableOpacity style={styles.component} onPress={onPress}>
       <View style={styles.profileWrapper}>
-        <UserProfile />
+        <List title="Jenit Lutfianis" desc="Dentist" image={DummyDoctor} />
       </View>
       <IconStar />
       <IconStar />
       <IconStar />
       <IconStar />
       <IconStar />
-    </View>
+    </TouchableOpacity>
   );
 };
 

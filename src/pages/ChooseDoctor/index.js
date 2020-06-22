@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Header, UserProfile} from '../../components';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
+import {Header, List} from '../../components';
 import {colors} from '../../utils/colors';
-import {IconChevronRight} from '../../assets';
+import {IconChevronRight, DummyDoctor} from '../../assets';
 
 const ChooseDoctor = ({navigation}) => {
   return (
@@ -13,26 +13,36 @@ const ChooseDoctor = ({navigation}) => {
         onPress={() => navigation.goBack()}
       />
       <View style={styles.content}>
-        <View style={styles.item}>
-          <UserProfile />
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('Chat')}>
+          <List title="Jenit Lutfianis" desc="Dentist" image={DummyDoctor} />
           <IconChevronRight />
-        </View>
-        <View style={styles.item}>
-          <UserProfile />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('Chat')}>
+          <List title="Jenit Lutfianis" desc="Dentist" image={DummyDoctor} />
           <IconChevronRight />
-        </View>
-        <View style={styles.item}>
-          <UserProfile />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('Chat')}>
+          <List title="Jenit Lutfianis" desc="Dentist" image={DummyDoctor} />
           <IconChevronRight />
-        </View>
-        <View style={styles.item}>
-          <UserProfile />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('Chat')}>
+          <List title="Jenit Lutfianis" desc="Dentist" image={DummyDoctor} />
           <IconChevronRight />
-        </View>
-        <View style={styles.item}>
-          <UserProfile />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.item}
+          onPress={() => navigation.navigate('Chat')}>
+          <List title="Jenit Lutfianis" desc="Dentist" image={DummyDoctor} />
           <IconChevronRight />
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

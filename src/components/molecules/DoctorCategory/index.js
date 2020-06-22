@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 130,
     padding: 12,
-    backgroundColor: colors.doctorCard,
+    backgroundColor: colors.card,
     marginRight: 10,
     borderRadius: 10,
   },

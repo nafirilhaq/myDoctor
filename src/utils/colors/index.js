@@ -3,8 +3,12 @@ const mainColor = {
   dark2: '#495A75',
   grey1: '#7D8797',
   grey2: '#E9E9E9',
+  grey3: '#8092AF',
+  grey4: '#EDEEF0',
+  grey5: '#B1B7C2',
   green1: '#0BCAD4',
   green2: '#EDFCFD',
+  blue1: '#0066CB',
 };
 
 export const colors = {
@@ -25,9 +29,16 @@ export const colors = {
   text: {
     first: mainColor.dark1,
     second: mainColor.grey1,
+    tertiary: mainColor.grey3,
     menuActive: mainColor.green1,
     menuInactive: mainColor.dark2,
   },
   border: mainColor.grey2,
-  doctorCard: mainColor.green2,
+  card: mainColor.green2,
+  card2: mainColor.green1,
+  textInput: {
+    background: mainColor.grey4,
+    backgroundActive: mainColor.blue1,
+    text: mainColor.grey5,
+  },
 };

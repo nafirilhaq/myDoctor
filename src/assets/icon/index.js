@@ -14,6 +14,12 @@ import IconDokterPsikiater from './icon_dokter_psikiater.svg';
 import IconDokterObat from './icon_dokter_obat.svg';
 import IconStar from './ic-star.svg';
 import IconChevronRight from './ic-chevron-right.svg';
+import IconSend from './ic-send.svg';
+import IconSendActive from './ic-send-active.svg';
+import IconProfileMenu from './ic-profile-menu.svg';
+import IconLanguageMenu from './ic-language-menu.svg';
+import IconRateMenu from './ic-rate-menu.svg';
+import IconHelpMenu from './ic-help-menu.svg';
 
 export {
   IconBackDark,
@@ -32,4 +38,10 @@ export {
   IconDokterPsikiater,
   IconStar,
   IconChevronRight,
+  IconSend,
+  IconSendActive,
+  IconProfileMenu,
+  IconLanguageMenu,
+  IconRateMenu,
+  IconHelpMenu,
 };

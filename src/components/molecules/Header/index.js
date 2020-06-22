@@ -4,8 +4,12 @@ import {fonts} from '../../../utils/fonts';
 import Button from '../../atoms/Button';
 import Gap from '../../atoms/Gap';
 import {colors} from '../../../utils/colors';
+import Profile from './Profile';
 
-const Header = ({onPress, title, type}) => {
+const Header = ({onPress, title, type, desc}) => {
+  if (type === 'profile') {
+    return <Profile title={title} desc={desc} />;
+  }
   return (
     <View style={styles.container(type)}>
       <Button
