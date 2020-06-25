@@ -9,6 +9,7 @@ import ChatItem from './ChatItem';
 import ButtonSend from './ButtonSend';
 import Profile from './Profile';
 import ProfileItem from './ProfileItem';
+import LoadingIndicator from './LoadingIndicator';
 
 export {
   Header,
@@ -22,4 +23,5 @@ export {
   ButtonSend,
   Profile,
   ProfileItem,
+  LoadingIndicator,
 };

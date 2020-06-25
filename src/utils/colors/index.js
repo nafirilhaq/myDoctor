@@ -9,11 +9,14 @@ const mainColor = {
   green1: '#0BCAD4',
   green2: '#EDFCFD',
   blue1: '#0066CB',
+  black1: '#000',
+  black2: 'rgba(0, 0, 0, 0.5)',
 };
 
 export const colors = {
   white: 'white',
   black: 'black',
+  green: mainColor.green1,
   background: mainColor.dark1,
   tabNav: mainColor.dark1,
   button: {
@@ -34,6 +37,7 @@ export const colors = {
     menuInactive: mainColor.dark2,
   },
   border: mainColor.grey2,
+  borderActive: mainColor.blue1,
   card: mainColor.green2,
   card2: mainColor.green1,
   textInput: {
@@ -41,4 +45,5 @@ export const colors = {
     backgroundActive: mainColor.blue1,
     text: mainColor.grey5,
   },
+  loadingBackground: mainColor.black2,
 };
