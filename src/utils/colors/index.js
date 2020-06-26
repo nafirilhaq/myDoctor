@@ -11,6 +11,7 @@ const mainColor = {
   blue1: '#0066CB',
   black1: '#000',
   black2: 'rgba(0, 0, 0, 0.5)',
+  red1: '#E06379',
 };
 
 export const colors = {
@@ -27,6 +28,10 @@ export const colors = {
     secondary: {
       background: 'white',
       text: mainColor.dark1,
+    },
+    disable: {
+      background: mainColor.grey4,
+      text: mainColor.grey5,
     },
   },
   text: {
@@ -46,4 +51,5 @@ export const colors = {
     text: mainColor.grey5,
   },
   loadingBackground: mainColor.black2,
+  warning: mainColor.red1,
 };

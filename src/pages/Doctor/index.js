@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   ScrollView,
   StyleSheet,
   Text,
-  View,
   TouchableOpacity,
+  View,
 } from 'react-native';
+import {ILPhotoNull} from '../../assets';
 import {
   DoctorCategory,
   DoctorRate,
@@ -13,11 +14,30 @@ import {
   List,
   NewsSection,
 } from '../../components';
+import {getData} from '../../utils';
 import {colors} from '../../utils/colors';
 import {fonts} from '../../utils/fonts';
-import {DummyUser} from '../../assets';
 
 const Doctor = ({navigation}) => {
+  const [profile, setProfile] = useState({
+    photo: '',
+    fullName: '',
+    profession: '',
+  });
+
+  useEffect(() => {
+    getData('user').then(res => {
+      const data = res;
+      if (data.photo) {
+        data.photo = {uri: res.photo};
+        setProfile(data);
+      } else {
+        data.photo = ILPhotoNull;
+        setProfile(data);
+      }
+    });
+  }, []);
+
   return (
     <View style={styles.page}>
       <View style={styles.content}>
@@ -25,9 +45,9 @@ const Doctor = ({navigation}) => {
           <Gap height={32} />
           <TouchableOpacity onPress={() => navigation.navigate('UserProfile')}>
             <List
-              title="Jenit Anggiani"
-              desc="Product Designer"
-              image={DummyUser}
+              title={profile.fullName}
+              desc={profile.profession}
+              image={profile.photo}
             />
           </TouchableOpacity>
           <Text style={styles.title}>

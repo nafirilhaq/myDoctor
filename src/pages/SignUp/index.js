@@ -4,9 +4,10 @@ import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
 import Header from '../../components/molecules/Header';
 import Gap from '../../components/atoms/Gap';
-import {colors, useForm} from '../../utils';
+import {colors, useForm, storeData, getData} from '../../utils';
 import {firebase} from '../../config';
 import LoadingIndicator from '../../components/molecules/LoadingIndicator';
+import {showMessage, hideMessage} from 'react-native-flash-message';
 
 const SignUp = ({navigation}) => {
   const [form, setForm] = useForm({
@@ -19,20 +20,50 @@ const SignUp = ({navigation}) => {
   const [loading, setLoading] = useState(false);
 
   const onClickContinue = () => {
-    //onPress={() => navigation.navigate('UploadPhoto')}
     setLoading(true);
+
     firebase
       .auth()
       .createUserWithEmailAndPassword(form.email, form.password)
       .then(success => {
         setForm('reset');
         setLoading(false);
-        console.log('Sukses : ', success);
+        const data = {
+          fullName: form.fullName,
+          profession: form.profession,
+          email: form.email,
+          uid: success.user.uid,
+        };
+
+        firebase
+          .database()
+          .ref('users/' + success.user.uid + '/')
+          .set(data);
+
+        storeData('user', data);
+        navigation.navigate('UploadPhoto', data);
       })
       .catch(error => {
-        const errorMessage = error.message;
+        const errorMessage = error.code;
+        let msgDisplay = error.message;
+        if (errorMessage === 'auth/invalid-email') {
+          msgDisplay = 'Maaf, format email salah.';
+        }
+        if (errorMessage === 'auth/email-already-in-use') {
+          msgDisplay = 'Maaf, email sudah terdaftar pada aplikasi.';
+        }
+        if (errorMessage === 'auth/weak-password') {
+          msgDisplay = 'Maaf, password harus lebih dari 6 karakter.';
+        }
+
         setLoading(false);
-        console.log('Error : ', errorMessage);
+        showMessage({
+          message: msgDisplay,
+          type: 'success',
+          floating: true,
+          backgroundColor: colors.warning,
+          color: colors.white,
+        });
       });
   };
   return (
